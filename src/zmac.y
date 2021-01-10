@@ -4278,6 +4278,7 @@ char	numpart[] = {
 #define MRASOP	(128)	/* dig operator out of identifiers */
 
 struct	item	keytab[] = {
+	{"*get",	PSINC,	ARGPSEUDO,	VERB | COL0 },
 	{"*include",	PSINC,	ARGPSEUDO,	VERB | COL0 },
 	{"*list",	0,	LIST,		VERB | COL0 },
 	{"*mod",	0,	MRAS_MOD,	VERB },
