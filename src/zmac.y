@@ -4399,6 +4399,7 @@ struct	item	keytab[] = {
 	{"eq",		0,	EQ,		0 },
 	{".eq.",	0,	MROP_EQ,	TERM | MRASOP },
 	{".equ",	0,	EQU,		VERB },
+	{"err",		SPCOM,	SPECIAL,	VERB },   // This needs work to make it a custom error msg
 	{"ex",		0xEB,	EX,		VERB | Z80 },
 	{"exaf",	0x08,	NOOPERAND,	VERB | Z80 | ZNONSTD },
 	{".exitm", 	0,	EXITM,		VERB },
