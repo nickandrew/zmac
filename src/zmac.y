@@ -2446,7 +2446,8 @@ statement:
 			list1();
 			break;
 		case SPSBTL:
-			err[warn_notimpl]++;
+			// Since our listings don't have titles or subtitles, SUBTTL
+			// can be safely ignored.
 			list1();
 			break;
 		case SPNAME:
