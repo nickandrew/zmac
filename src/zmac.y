@@ -4425,6 +4425,7 @@ struct	item	keytab[] = {
 	{".if",		0,	IF_TK,		VERB | COL0 },
 	{".ifdef",	1,	IF_DEF_TK,	VERB | COL0 },
 	{".ifndef",	0,	IF_DEF_TK,	VERB | COL0 },
+	{"ifref",	0,	IF_DEF_TK,	VERB | COL0 },  // This needs work because IFNDEF != IFREF
 	{"im",		0166506,IM,		VERB | Z80 },
 	{"im0",		0xed46,	NOOPERAND,	VERB | Z80 | ZNONSTD },
 	{"im1",		0xed56,	NOOPERAND,	VERB | Z80 | ZNONSTD },
