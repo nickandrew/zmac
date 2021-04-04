@@ -2463,13 +2463,16 @@ statement:
 			break;
 		case SPCOM:
 			quote = *tempbuf;
+			printf("SPCOM Tempbuf is %s Looking for %c\n", tempbuf, quote);
 			list1();
+			break;
 			for (;;) {
 				raw = 1;
 				yychar = yylex();
 				list1();
 				if (yychar == 0)
 					break;
+				printf("SPCOM found char %d\n", (int) yychar);
 				if (*tempbuf == quote) {
 					yychar = yylex();
 					break;
@@ -4337,6 +4340,7 @@ struct	item	keytab[] = {
 	{"cnc",		0324,	CALL8,		VERB | I8080 },
 	{"cnz",		0304,	CALL8,		VERB | I8080 },
 	{".comment",	SPCOM,	SPECIAL,	VERB },
+	{"com",		SPCOM,	SPECIAL,	VERB },
 	{".common",	PSCMN,	ARGPSEUDO,	VERB },
 	{".cond",	0,	IF_TK,		VERB },
 	{"cp",		0270,	LOGICAL,	VERB | I8080 | Z80 },
