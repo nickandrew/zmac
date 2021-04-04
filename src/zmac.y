@@ -223,6 +223,7 @@
 #pragma GCC diagnostic error "-Wreturn-type"
 #endif
 
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -2390,6 +2391,13 @@ statement:
 			break;
 		case PSINC:	/* include file */
 			if (mras && !strchr(tempbuf, '.')) {
+				/* Convert filename to lower case */
+				cp = tempbuf;
+				while (*cp) {
+					if (isupper(*cp))
+						*cp = tolower(*cp);
+					++cp;
+				}
 				strcat(tempbuf, ".asm");
 			}
 			next_source(tempbuf, 1);
